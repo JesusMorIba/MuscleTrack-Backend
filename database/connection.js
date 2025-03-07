@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const connection = async () => {
     try {
-        await mongoose.connect("mongodb://localhost:27017/muscle_track");
+        await mongoose.connect(process.env.DB_CONNECTION);
         console.log("Conectado correctamente a bd: muscle_track");
     } catch (error) {
         console.log(error);
